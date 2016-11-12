@@ -1,0 +1,23 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+/* CSS Document */
+@import "./mixins.scss";
+@import "./variables.scss";
+
+body.basictorso
+{
+	@include extendFlex($zp);
+	@include fontSmooth();
+}
+
+.commentBox {
+	color: blue;
+}
+
+footer.navbar-fixed-bottom {
+	background-color: $bgColor;
+	div.col-md-6 {
+		text-align: center;
+	}
+}
+
+@import "./mq.scss";
