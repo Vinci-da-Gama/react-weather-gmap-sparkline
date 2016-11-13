@@ -12,6 +12,6 @@ export function fetchWeatherByAxios(city, country) {
 
 	return {
 		type: FETCH_WEATHER,
-		weatherLoad: request
+		payload: request
 	};
 }
