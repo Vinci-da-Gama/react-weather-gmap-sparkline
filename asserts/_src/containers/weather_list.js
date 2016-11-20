@@ -9,6 +9,7 @@ class WeatherList extends Component {
         super(props);
     }
 
+
     renderTdContent(responseData) {
         const name         = responseData.city.name;
         // standard way to write return;
@@ -17,7 +18,7 @@ class WeatherList extends Component {
         const pressures    = responseData.list.map((weatherArgument) => weatherArgument.main.pressure);
         const humidities   = responseData.list.map((weatherArgument) => weatherArgument.main.humidity);
         const { lon, lat } = responseData.city.coord;
-        console.log('19 -- temps is: ', temps);
+        console.log('22 -- responseData is: ', responseData);
         
 		if(!responseData) {
         	return (
@@ -34,7 +35,7 @@ class WeatherList extends Component {
         return (
 			<tr key={name}>
 				<td className="google-maptd">
-					<Gmap lon={ lon } lat={ lat } />
+					<Gmap markers={responseData.city.coord} cityname={name} lon={ lon } lat={ lat } />
 				</td>
 				<td>
 					<Chart ary={temps} color="orange" unit = "K" />
